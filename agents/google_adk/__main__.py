@@ -6,10 +6,10 @@ import click
 import logging
 
 @click.command()
-@click.option("--host", default="loclhost", help="Host to bind the server to")
+@click.option("--host", default="localhost", help="Host to bind the server to")
 @click.option("--port", default=10002, help="Port number for the server")
 def main(host, port):
-    capabilities = AgentCapabilities(streaminhg=False)
+    capabilities = AgentCapabilities(streaming=False)
     skill = AgentSkill(
         id="tell_time",
         name="Tell Time Tool",

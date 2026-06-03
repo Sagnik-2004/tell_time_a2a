@@ -25,7 +25,7 @@ class AgentTaskManager(InMemoryTaskManager):
         )
 
         async with self.lock:
-            task.status = TaskState(state=TaskState.COMPLETED)
+            task.status = TaskStatus(state=TaskState.COMPLETED)
             task.history.append(agent_message)
 
         return SendTaskResponse(id=request.id, result=task)
